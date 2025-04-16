@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "chatrooms" : {
+            ".write": "auth != null",
+            ".read": "auth != null"
+        }
+    }
+}
