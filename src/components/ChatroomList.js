@@ -3,24 +3,28 @@ import React, { useEffect, useState } from 'react';
 import { ListGroup, Button } from 'react-bootstrap';
 import { db } from '../firebase';
 import { ref, onValue, remove } from 'firebase/database';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase';
 
 const ChatroomList = ({ setSelectedRoom }) => {
   const [chatrooms, setChatrooms] = useState([]);
+  const [user] = useAuthState(auth); // Add this
 
   useEffect(() => {
-    const chatroomRef = ref(db, 'chatrooms'); // change to 'chatrooms'
-
+    const chatroomRef = ref(db, 'chatrooms');
     const unsubscribe = onValue(chatroomRef, (snapshot) => {
       const data = snapshot.val();
       const roomArray = data
-        ? Object.entries(data).map(([id, value]) => ({ id, ...value }))
+        ? Object.entries(data)
+            .map(([id, value]) => ({ id, ...value }))
+            .filter((room) => room.members?.includes(user?.uid)) // <--- only show joined
         : [];
       setChatrooms(roomArray);
     });
 
-    return () => unsubscribe(); // clean up listener on unmount
-  }, []);
-
+    return () => unsubscribe();
+  }, [user]);
+  
   const handleDelete = (roomId) => {
     remove(ref(db, `chatrooms/${roomId}`)); // change to 'chatrooms'
   };

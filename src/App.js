@@ -14,6 +14,12 @@ function App() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if ('Notification' in window && Notification.permission !== 'granted') {
+      Notification.requestPermission();
+    }
+  }, []);  
+
   return user ? <Home user={user} /> : <SignIn />;
 
 }

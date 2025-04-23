@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   signInWithPopup
 } from 'firebase/auth';
+import { db } from './firebase';
+import { set, ref } from 'firebase/database';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
 const SignIn = () => {
@@ -25,7 +27,12 @@ const SignIn = () => {
 
   const handleSignUp = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      await set(ref(db, `users/${user.uid}`), {
+        email: user.email,
+        displayName: user.displayName || '',
+      });
       alert("Account created!");
     } catch (error) {
       alert(error.message);
@@ -34,7 +41,12 @@ const SignIn = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithPopup(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      await set(ref(db, `users/${user.uid}`), {
+        email: user.email,
+        displayName: user.displayName || '',
+      });
       alert("Signed in with Google!");
     } catch (error) {
       alert(error.message);

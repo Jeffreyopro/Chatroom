@@ -6,7 +6,7 @@ const NavbarComponent = ({ onCreate, handleLogout }) => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid className="d-flex justify-content-between">
-        <Navbar.Brand>🔥 ChatRoom App</Navbar.Brand>
+        <Navbar.Brand>ChatRoom App</Navbar.Brand>
         <div className="d-flex gap-2">
           <Button variant="outline-light" onClick={onCreate}>
             + Create Chatroom
