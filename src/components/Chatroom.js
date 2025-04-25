@@ -38,13 +38,17 @@ const Chatroom = ({ room }) => {
           body: latestMessage.text,
         });
       }
+      new Notification("Test notification", {
+        body: "This is a test",
+      });
+      
 
       setMessages(messageArray);
     });
 
 
     return () => unsubscribe();
-  }, [room]);
+  }, [room, user]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });

@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Software Studio 2025 Spring
+## Assignment 02 Chatroom
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Scoring
 
-In the project directory, you can run:
+| **Basic components** | **Score** | **Check** |
+| :------------------- | :-------: | :-------: |
+| Membership Mechanism |    5%     |     Y     |
+| Host Firebase Page   |    5%     |     Y     |
+| Database Read/Write  |    15%    |     Y     |
+| RWD                  |    15%    |     Y     |
+| Git                  |    5%     |     Y     |
+| Chatroom             |    20%    |     Y     |
 
-### `npm start`
+| **Advanced tools**     | **Score** | **Check** |
+| :--------------------- | :-------: | :-------: |
+| Using React            |    10%    |     Y     |
+| third-party accounts   |    1%     |     Y     |
+| Add Chrome notification|    5%     |     N     |
+| sending code problems  |    2%     |     Y     |
+| others                 |    12%    |     N     |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### How to set up locally
 
-### `npm test`
+    1. Clone the Repository 
+    https://github.com/Jeffreyopro/Chatroom.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    2. run the command
+    npm install
 
-### `npm run build`
+    3. Set up Firebase
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    4. run the command
+    npm run build
+    npm install -g firebase-tools
+    firebase serve
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### How to use
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    First, log in to your account, then create a chatroom by clicking the button in the navigation bar. After entering a room name, select the users from the database to invite. Once the room is created, click on the room name in the chatroom list to open the chat. Enjoy chatting with your selected members!
 
-### `npm run eject`
+### Bonus Function description
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    None.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Web page link
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    https://assignment02-cd232.web.app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Others (Optional)
 
-## Learn More
+    None.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<style>
+table th{
+    width: 100%;
+}
+</style>
